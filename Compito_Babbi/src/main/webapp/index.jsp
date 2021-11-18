@@ -8,7 +8,16 @@
 </head>
 <body>
 
-<a href="lista-doni">Lista doni Admin</a>
+
+	<label for="username">Username</label><br>
+	<input type="text" id="username" placeholder="inserisci Username" name="username"><br>
+	
+	<label for="password">Password</label><br>
+	<input type="text" id="password" placeholder="inserisci Password" name="password"><br>
+
+
+<a href="lista-doni">lista doni</a>
+<a href="lista-babbi">lista babbi</a>
 
 </body>
 </html>

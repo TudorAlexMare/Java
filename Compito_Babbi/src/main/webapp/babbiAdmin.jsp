@@ -1,4 +1,4 @@
-<%@page import="model.Dono"%>
+<%@page import="model.Babbo"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -10,26 +10,28 @@
 </head>
 <body>
 
-<% ArrayList<Dono> listaDoni = (ArrayList<Dono>) request.getAttribute("key1"); %>
+<% ArrayList<Babbo> listaBabbi = (ArrayList<Babbo>) request.getAttribute("key2"); %>
 
 <table>
 	<tbody>
 		<tr>
-			<th>dono</th>
-			<th>disponibilità</th>
-		</tr>
-<% for(Dono d :listaDoni){ %>		
-		
-		<tr>
-			<td><%=d.getDescrizione() %></td>
-			<td><%=d.getDisponibilita() %></td>
+			<th>nome</th>
+			<th>mezzo di trasporto</th>
+			<th>zona</th>
 		</tr>
 		
-<%}%>
-	
-	</tbody>
+<% for(Babbo b :listaBabbi){ %>	
 
+		<tr>
+			<td><%=b.getUsername() %></td>
+			<td><%=b.getMezzo() %></td>
+			<td><%=b.getZona() %></td>
+		</tr>
+
+<%}%>
+	</tbody>
 </table>
+
 <a href="index.jsp">home</a>
 <a href="lista-doni">lista doni</a>
 <a href="lista-babbi">lista babbi</a>

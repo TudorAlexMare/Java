@@ -2,9 +2,10 @@ package model;
 
 public class Dono {
 
-	int id;
-	String descrizione;
-	int disponibilita;
+	private int id;
+	private String descrizione;
+	private int disponibilita;
+
 	public int getId() {
 		return id;
 	}

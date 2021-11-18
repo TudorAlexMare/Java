@@ -15,7 +15,7 @@ public class InitDB {
 	public static void creaTabellaBabbi() {
 		String query = "CREATE TABLE IF NOT EXISTS babbo(" + "id int AUTO_INCREMENT PRIMARY KEY,"
 				+ "username varchar(20) UNIQUE," + "password varchar(25)," + "nominativo varchar(20),"
-				+ "role varchar(15))";
+				+ "role varchar(15)," + "mezzo varchar(20)," + "zona varchar(25))";
 
 		connessione = db.getConnection();
 		try {
@@ -38,38 +38,9 @@ public class InitDB {
 			e.printStackTrace();
 		}
 	}
-	
-	public static void creaTabellaSacco() {
-		String query = "CREATE TABLE IF NOT EXISTS sacco(" + "id int AUTO_INCREMENT," + "nome_sacco varchar(10),"
-				+ "orario_consegna varchar(10)," + "orario_assegnato varchar(10)," + "PRIMARY KEY(id))";
-
-		connessione = db.getConnection();
-		try {
-			stat = connessione.createStatement();
-			stat.execute(query);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void creaTabellaConsegne() {
-		String query = "CREATE TABLE IF NOT EXISTS consegna(" + "id_babbi int,"
-				+ "id_donunumero_sacco BIT, ora varchar(10))";
-
-		connessione = db.getConnection();
-		try {
-			stat = connessione.createStatement();
-			stat.execute(query);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
 
 	public static void main(String[] args) {
 		creaTabellaBabbi();
 		creaTabellaDoni();
-//		creaTabellaConsegne();
-//		creaTabellaSacco();
-
 	}
 }
